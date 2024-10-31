@@ -38,6 +38,10 @@ public class LinearEquation {
         if (y1 == y2) {
             return "y = " + roundedToHundredth(y1);
         }
+        if (a != Math.abs(a) && b != Math.abs(b)) {
+            a = Math.abs(a);
+            b = Math.abs(b);
+        }
         if (a != Math.abs(a)) {
             a = Math.abs(a);
             b *= -1;
