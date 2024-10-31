@@ -46,6 +46,50 @@ public class LinearEquation {
             a = Math.abs(a);
             b *= -1;
         }
+        if (Math.abs(yIntercept()) != yIntercept()) {
+            d = Math.abs(d);
+            if (d % 1 == 0.0) {
+                int e = (int) yIntercept();
+                e = Math.abs(e);
+                if (b % a != 0) {
+                    return "y = " + b + "/" + a + "x - " + e;
+                } else if (c == 1) {
+                    return "y = x - " + e;
+                } else if (c == -1) {
+                    return "y = -x - " + e;
+                }else {
+                    return "y = " + c + "x - " + e;
+                }
+            }
+            if (b % a != 0) {
+                return "y = " + b + "/" + a + "x - " + d;
+            } else if (c == 1) {
+                return "y = " + "x - " + d;
+            } else {
+                return "y = " + c + "x - " + d;
+            }
+        }
+        if (yIntercept() == 0) {
+            if (d % 1 == 0.0) {
+                int e = (int) yIntercept();
+                if (b % a != 0) {
+                    return "y = " + b + "/" + a + "x";
+                } else if (c == 1) {
+                    return "y = x";
+                } else if (c == -1) {
+                    return "y = -x";
+                }else {
+                    return "y = " + c + "x";
+                }
+            }
+            if (b % a != 0) {
+                return "y = " + b + "/" + a + "x";
+            } else if (c == 1) {
+                return "y = " + "x";
+            } else {
+                return "y = " + c + "x";
+            }
+        }
         if (d % 1 == 0.0) {
             int e = (int) yIntercept();
             if (b % a != 0) {
